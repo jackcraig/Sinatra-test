@@ -1,0 +1,9 @@
+<div style= 'border: 3px dashed green'>
+
+<p><%= @properties["country"] %></p>
+<p><%= @properties["listing"].length %></p>
+<% @properties["listing"].each do | item | %>
+  <img src='<%= item["agent_logo"] %>' >
+  <p><%= item["latitude"] %></p>
+<% end %>
+</div>
