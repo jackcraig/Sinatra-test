@@ -56,13 +56,70 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+html {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
 
+*, *:before, *:after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+}
 
+html {
+    font-family: "futura-pt",sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: #000;
+}
 
+p {
+    font-size: 1rem;
+}
 
+body {
+    background: #fafaf0;
+}
 
+.wrapper {
+    padding: 1rem;
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+}
 
+img {
+    filter:grayscale();
+    -webkit-filter:grayscale();
+    mix-blend-mode: multiply;
+}
 
+.listing__title {
+    font-size: 1rem;
+}
+
+.listing__title-link {
+    color: #000;
+    text-decoration: none;
+}
+
+.listing__details {
+    float: right;
+    max-width: calc(100% - 345px);
+    width: 100%;
+    padding-left: 60px;
+    margin-bottom: 8rem;
+}
+
+.listing__floorplan {
+    max-width: 345px;
+    width: 100%;
+    height: auto;
+    float: left;
+}
 
 
 
