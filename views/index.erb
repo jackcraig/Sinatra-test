@@ -12,15 +12,32 @@
         <link rel="stylesheet" href="css/main.css">
 
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+        <script src="https://use.typekit.net/hxe8rmq.js"></script>
+		<script>try{Typekit.load({ async: true });}catch(e){}</script>
     </head>
     <body>
 
-		<p><%= @properties["country"] %></p>
-		<p><%= @properties["listing"].length %></p>
-		<% @properties["listing"].each do | item | %>
-			<img src='<%= item["image_url"] %>' >
-			<p><%= item["description"] %></p>
-		<% end %>
+
+    <div class="wrapper">
+
+	    <div class="listing">
+			<% @properties["listing"].each do | item | %>
+				<div class="listing__details">
+					<h2 class="listing__title"><a href="<%= item["details_url"] %>" class="listing__title-link" ><%= item["displayable_address"] %></a></h2>
+					<p class="listing__description"><%= item["description"] %></p>
+					<p class="listing__price">&pound;<%= item["price"] %></p>
+					<img class="listing__photo" src='<%= item["image_url"] %>' alt="" >
+				</div>
+
+				<% unless item["floor_plan"] == nil %>
+					<img src='<%= item["floor_plan"][0] %>' alt="Floorplan" class="listing__floorplan" >
+				<% end %>
+
+
+			<% end %>
+		</div>
+
+	</div>
 
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
